@@ -1,6 +1,14 @@
+import {Navigate, Outlet} from "react-router";
+import {ROUTES} from "../../routes";
 
 
 export const AuthWrapper = () => {
-   return <>text</>
+   const token = localStorage.getItem("token");
+
+   if(!token){
+      return <Navigate to={ROUTES.auth} />;
+   }
+
+   return <Outlet/>
 };
 

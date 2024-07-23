@@ -4,6 +4,7 @@ import {API_URL} from "../static/api.ts";
 const axiosInstance = axios.create({
     baseURL: `${API_URL}`,
     headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
     },
     timeout: 10000,

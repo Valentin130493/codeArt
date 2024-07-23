@@ -1,4 +1,4 @@
-export const Routes = {
+export const ROUTES = {
     auth:'/',
     register:'/register',
     home:'/home',

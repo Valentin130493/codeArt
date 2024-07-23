@@ -1,30 +1,29 @@
-import { RouteObject} from 'react-router-dom';
-// import {AuthWrapper} from "./auth/AuthWrapper.tsx";
-import {Routes} from "../routes";
+import {RouteObject} from 'react-router-dom';
+
+import {ROUTES} from "../routes";
 import SingIn from "./auth/SingIn.tsx";
 import ErrorPage from "./errorPage";
+import {AuthWrapper} from "./auth/AuthWrapper.tsx";
+import HomePage from "./home";
 
 export const routes: RouteObject[] = [
     {
-        path: Routes.auth,
+        path: ROUTES.auth,
         Component: SingIn,
     },
-    // {
-    //     Component: AuthWrapper,
-    //     children: [
-    //         {
-    //             index: true,
-    //             element: <Navigate to={Routes.auth}/>
-    //         },
-    //         {
-    //             path: Routes.auth,
-    //             Component: SingIn,
-    //         },
-    //
-    //     ],
-    // },
+    {
+        Component: AuthWrapper,
+        children: [
+
+            {
+                path: ROUTES.home,
+                Component: HomePage,
+            },
+
+        ],
+    },
     {
         Component: ErrorPage,
-        path: Routes.notFount,
+        path: ROUTES.notFount,
     },
 ]

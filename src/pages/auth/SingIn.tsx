@@ -14,7 +14,7 @@ const SingIn = () => {
             "justifyContent": "center"
         }}>
             <Form
-                style={{maxWidth: 400, width: '100%'}}
+                style={{maxWidth: 320, width: '100%'}}
                 onFinish={singIn}
                 autoComplete="off"
                 layout={'vertical'}

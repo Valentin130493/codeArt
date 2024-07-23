@@ -1,2 +1,5 @@
 export const API_URL = 'http://qa.codeart.cc/'
 export const API_LOGIN = 'user/login'
+export const API_LOGOUT = 'user/logout'
+export const USERNAME='yusuf'
+export const PASSWORD = 'Yusuf123*'
