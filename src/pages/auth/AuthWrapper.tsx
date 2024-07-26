@@ -1,14 +1,16 @@
-import {Navigate, Outlet} from "react-router";
-import {ROUTES} from "../../routes";
-
+import { Navigate, Outlet } from "react-router";
+import { ROUTES } from "../../routes";
+import { TOKEN } from "../../static/storage.ts";
+import { useEffect } from "react";
 
 export const AuthWrapper = () => {
-   const token = localStorage.getItem("token");
+  const token = localStorage.getItem(TOKEN);
 
-   if(!token){
-      return <Navigate to={ROUTES.auth} />;
-   }
+  useEffect(() => {}, [token]);
 
-   return <Outlet/>
+  if (!token) {
+    return <Navigate to={ROUTES.auth} />;
+  }
+
+  return <Outlet />;
 };
-
